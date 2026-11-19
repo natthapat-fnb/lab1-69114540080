@@ -14,14 +14,13 @@ def to_grade(score):
 
 
 def average(scores):
-    return sum(scores) / len(scores)
+    return round(sum(scores) / len(scores), 2) if len(scores) > 0 else 0
 
-def average(scores):
-    return round(sum(scores) / len(scores), 2)
-
-
+def is_pass(score):
+    return score >= 50
 
 if __name__ == "__main__":
     scores = [85, 72, 64, 91]
     print("Average:", average(scores))
     print("Grade:", to_grade(average(scores)))
+    
